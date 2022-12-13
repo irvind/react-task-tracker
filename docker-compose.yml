@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  frontend:
+    build: .
+    image: react_crash_course_frontend
+    volumes:
+      - "./:/usr/src/app"
+    ports:
+      - "8080:8080"
+  mocks:
+    image: react_crash_course_frontend
+    volumes:
+      - "./:/usr/src/app"
+    ports:
+      - "8090:5000"
+    command: npm run server
+
+  
